@@ -3,6 +3,7 @@ import 'package:e_commerce_app2/features/on_boarding/presentation/views/on_board
 import 'package:e_commerce_app2/features/splash/presentations/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -25,7 +26,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: isEnglish()
+              ? MainAxisAlignment.start
+              : MainAxisAlignment.end,
           children: [SvgPicture.asset(Assets.assetsImagesPlant)],
         ),
         SvgPicture.asset(Assets.assetsImagesLogo),
@@ -41,4 +44,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       }
     });
   }
+}
+
+bool isEnglish() {
+  return Intl.getCurrentLocale() == 'en';
 }
