@@ -1,3 +1,4 @@
+import 'package:e_commerce_app2/constants.dart';
 import 'package:e_commerce_app2/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -32,7 +33,7 @@ class PageViewItem extends StatelessWidget {
                 child: SvgPicture.asset(image),
               ),
               Padding(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(kHorizontalPadding),
                 child: Text(S.of(context).skip),
               ),
             ],
@@ -42,7 +43,7 @@ class PageViewItem extends StatelessWidget {
         title,
         const SizedBox(height: 24),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
           child: Text(textAlign: TextAlign.center, subTitle),
         ),
       ],
