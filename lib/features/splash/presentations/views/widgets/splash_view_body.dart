@@ -1,6 +1,5 @@
 import 'package:e_commerce_app2/core/utilies/app_images.dart';
 import 'package:e_commerce_app2/features/on_boarding/presentation/views/on_boarding_view.dart';
-import 'package:e_commerce_app2/features/splash/presentations/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
