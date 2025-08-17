@@ -2,6 +2,7 @@ import 'package:e_commerce_app2/constants.dart';
 import 'package:e_commerce_app2/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:e_commerce_app2/core/utilies/app_text_styles.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({
@@ -38,7 +39,12 @@ class PageViewItem extends StatelessWidget {
                 visible: isVisible,
                 child: Padding(
                   padding: const EdgeInsets.all(kHorizontalPadding),
-                  child: Text(S.of(context).skip),
+                  child: Text(
+                    S.of(context).skip,
+                    style: AppTextStyles.regular13.copyWith(
+                      color: Color(0xff949D9E),
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -48,8 +54,12 @@ class PageViewItem extends StatelessWidget {
         title,
         const SizedBox(height: 24),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-          child: Text(textAlign: TextAlign.center, subTitle),
+          padding: const EdgeInsets.symmetric(horizontal: 37),
+          child: Text(
+            textAlign: TextAlign.center,
+            subTitle,
+            style: AppTextStyles.semiBold13.copyWith(color: Color(0xff4E5456)),
+          ),
         ),
       ],
     );
