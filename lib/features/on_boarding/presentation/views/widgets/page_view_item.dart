@@ -1,4 +1,5 @@
 import 'package:e_commerce_app2/constants.dart';
+import 'package:e_commerce_app2/features/auth/presentation/views/login_view.dart';
 import 'package:e_commerce_app2/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -39,10 +40,17 @@ class PageViewItem extends StatelessWidget {
                 visible: isVisible,
                 child: Padding(
                   padding: const EdgeInsets.all(kHorizontalPadding),
-                  child: Text(
-                    S.of(context).skip,
-                    style: AppTextStyles.regular13.copyWith(
-                      color: Color(0xff949D9E),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(
+                        context,
+                      ).pushReplacementNamed(LoginView.routeName);
+                    },
+                    child: Text(
+                      S.of(context).skip,
+                      style: AppTextStyles.regular13.copyWith(
+                        color: Color(0xff949D9E),
+                      ),
                     ),
                   ),
                 ),
