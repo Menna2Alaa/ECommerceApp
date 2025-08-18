@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class SharedPrefrencesSingleton {
+class Pref {
   static late SharedPreferences _instance;
 
   static Future<void> init() async {
@@ -11,7 +11,7 @@ class SharedPrefrencesSingleton {
     await _instance.setBool(key, value);
   }
 
-  static getBool(String key) async {
+  static getBool(String key) {
     return _instance.getBool(key) ?? false;
   }
 }

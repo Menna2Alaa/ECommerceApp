@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:e_commerce_app2/constants.dart';
+import 'package:e_commerce_app2/core/services/shared_prefrences_singleton.dart';
 import 'package:e_commerce_app2/core/utilies/app_colors.dart';
 import 'package:e_commerce_app2/core/widgets/custome_button.dart';
 import 'package:e_commerce_app2/features/auth/presentation/views/login_view.dart';
@@ -57,6 +58,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
             child: CustomeButton(
               onPressed: () {
+                Pref.setBool(kIsOnBoardingViewSeen, true);
                 Navigator.of(context).pushReplacementNamed(LoginView.routeName);
               },
               text: 'Start Now',
