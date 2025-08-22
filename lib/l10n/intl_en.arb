@@ -1,5 +1,15 @@
 {
     "skip" : "Skip",
-    "title" : "Welcome to FruitHub",
-    "desc" : "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality"
+    "title1" : "Welcome to FruitHub",
+    "title2" : "Search and Shop",
+    "desc1" : "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality",
+    "desc2":"We bring you the best carefully selected fruits. Check out the details, photos, and reviews to make sure you choose the perfect fruit.",
+    "button":"Start now",
+    "login" : "signIn",
+    "email" : "email",
+    "password" : "password",
+    "forgotPassword" : "forgotPassword",
+    "textSpan1" : "dont have an account? ",
+    "textSpan2":"create an account",
+    "signInDivider" : "or"
 }

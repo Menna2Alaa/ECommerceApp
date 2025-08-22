@@ -22,10 +22,22 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "desc": MessageLookupByLibrary.simpleMessage(
+    "button": MessageLookupByLibrary.simpleMessage("Start now"),
+    "desc1": MessageLookupByLibrary.simpleMessage(
       "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality",
     ),
+    "desc2": MessageLookupByLibrary.simpleMessage(
+      "We bring you the best carefully selected fruits. Check out the details, photos, and reviews to make sure you choose the perfect fruit.",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("email"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("forgotPassword"),
+    "login": MessageLookupByLibrary.simpleMessage("signIn"),
+    "password": MessageLookupByLibrary.simpleMessage("password"),
+    "signInDivider": MessageLookupByLibrary.simpleMessage("or"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
-    "title": MessageLookupByLibrary.simpleMessage("Welcome to FruitHub"),
+    "textSpan1": MessageLookupByLibrary.simpleMessage("dont have an account? "),
+    "textSpan2": MessageLookupByLibrary.simpleMessage("create an account"),
+    "title1": MessageLookupByLibrary.simpleMessage("Welcome to FruitHub"),
+    "title2": MessageLookupByLibrary.simpleMessage("Search and Shop"),
   };
 }

@@ -60,23 +60,93 @@ class S {
   }
 
   /// `Welcome to FruitHub`
-  String get title {
+  String get title1 {
     return Intl.message(
       'Welcome to FruitHub',
-      name: 'title',
+      name: 'title1',
       desc: '',
       args: [],
     );
   }
 
+  /// `Search and Shop`
+  String get title2 {
+    return Intl.message('Search and Shop', name: 'title2', desc: '', args: []);
+  }
+
   /// `Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality`
-  String get desc {
+  String get desc1 {
     return Intl.message(
       'Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality',
-      name: 'desc',
+      name: 'desc1',
       desc: '',
       args: [],
     );
+  }
+
+  /// `We bring you the best carefully selected fruits. Check out the details, photos, and reviews to make sure you choose the perfect fruit.`
+  String get desc2 {
+    return Intl.message(
+      'We bring you the best carefully selected fruits. Check out the details, photos, and reviews to make sure you choose the perfect fruit.',
+      name: 'desc2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start now`
+  String get button {
+    return Intl.message('Start now', name: 'button', desc: '', args: []);
+  }
+
+  /// `signIn`
+  String get login {
+    return Intl.message('signIn', name: 'login', desc: '', args: []);
+  }
+
+  /// `email`
+  String get email {
+    return Intl.message('email', name: 'email', desc: '', args: []);
+  }
+
+  /// `password`
+  String get password {
+    return Intl.message('password', name: 'password', desc: '', args: []);
+  }
+
+  /// `forgotPassword`
+  String get forgotPassword {
+    return Intl.message(
+      'forgotPassword',
+      name: 'forgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `dont have an account? `
+  String get textSpan1 {
+    return Intl.message(
+      'dont have an account? ',
+      name: 'textSpan1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `create an account`
+  String get textSpan2 {
+    return Intl.message(
+      'create an account',
+      name: 'textSpan2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `or`
+  String get signInDivider {
+    return Intl.message('or', name: 'signInDivider', desc: '', args: []);
   }
 }
 

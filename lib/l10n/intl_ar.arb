@@ -9,6 +9,7 @@
     "email" : "البريد الالكتروني",
     "password" : "كلمة المرور",
     "forgotPassword" : "نسيت كلمة المرور؟",
-    "account" : " لا تمتلك حساب؟ قم بإنشاء حساب",
-     "signInDivider" : "أو"
+    "textSpan1" : "لا تمتلك حساب؟ ",
+    "textSpan2": "قم بإنشاء حساب",
+    "signInDivider" : "أو"
 }

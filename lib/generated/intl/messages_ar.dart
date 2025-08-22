@@ -22,6 +22,22 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "button": MessageLookupByLibrary.simpleMessage("ابدأ الان"),
+    "desc1": MessageLookupByLibrary.simpleMessage(
+      "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية",
+    ),
+    "desc2": MessageLookupByLibrary.simpleMessage(
+      "قدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+    "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "signInDivider": MessageLookupByLibrary.simpleMessage("أو"),
     "skip": MessageLookupByLibrary.simpleMessage("تخط"),
+    "textSpan1": MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟ "),
+    "textSpan2": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
+    "title1": MessageLookupByLibrary.simpleMessage("FruitHub مرحبا بك في "),
+    "title2": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
   };
 }
