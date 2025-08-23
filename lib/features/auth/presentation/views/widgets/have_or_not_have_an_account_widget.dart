@@ -2,8 +2,8 @@ import 'package:e_commerce_app2/core/utilies/app_text_styles.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class DonotHaveAnAccountWidget extends StatelessWidget {
-  const DonotHaveAnAccountWidget({
+class HaveOrNotHaveAnAccountWidget extends StatelessWidget {
+  const HaveOrNotHaveAnAccountWidget({
     super.key,
     required this.text1,
     required this.text2,
