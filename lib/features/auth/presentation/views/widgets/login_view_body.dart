@@ -4,6 +4,7 @@ import 'package:e_commerce_app2/core/utilies/app_images.dart';
 import 'package:e_commerce_app2/core/utilies/app_text_styles.dart';
 import 'package:e_commerce_app2/core/widgets/custome_button.dart';
 import 'package:e_commerce_app2/core/widgets/custome_text_form_field.dart';
+import 'package:e_commerce_app2/features/auth/presentation/views/sign_up_view.dart';
 import 'package:e_commerce_app2/features/auth/presentation/views/widgets/donot_have_an_Account_widget.dart';
 import 'package:e_commerce_app2/features/auth/presentation/views/widgets/or_divider.dart';
 import 'package:e_commerce_app2/features/auth/presentation/views/widgets/social_login_button.dart';
@@ -49,7 +50,13 @@ class LoginViewBody extends StatelessWidget {
               const SizedBox(height: 33),
               CustomeButton(onPressed: () {}, text: 'Sign In'),
               const SizedBox(height: 33),
-              const DonotHaveAnAccountWidget(),
+              DonotHaveAnAccountWidget(
+                onTap: () {
+                  Navigator.pushNamed(context, SignUpView.routeName);
+                },
+                text1: 'Don\'t have an account? ',
+                text2: 'Create an account',
+              ),
               const SizedBox(height: 33),
               const OrDivider(),
               const SizedBox(height: 16),
