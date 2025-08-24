@@ -41,7 +41,7 @@ class SignUpViewBody extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              text1: 'Alredy has an account?',
+              text1: 'Already have an account? ',
               text2: 'Sign in',
             ),
           ],
