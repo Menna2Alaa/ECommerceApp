@@ -18,10 +18,8 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(
-      _current != null,
-      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
-    );
+    assert(_current != null,
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
@@ -43,10 +41,8 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(
-      instance != null,
-      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
-    );
+    assert(instance != null,
+        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -56,7 +52,12 @@ class S {
 
   /// `Skip`
   String get skip {
-    return Intl.message('Skip', name: 'skip', desc: '', args: []);
+    return Intl.message(
+      'Skip',
+      name: 'skip',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Welcome to FruitHub`
@@ -71,7 +72,12 @@ class S {
 
   /// `Search and Shop`
   String get title2 {
-    return Intl.message('Search and Shop', name: 'title2', desc: '', args: []);
+    return Intl.message(
+      'Search and Shop',
+      name: 'title2',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality`
@@ -96,22 +102,42 @@ class S {
 
   /// `Start now`
   String get button {
-    return Intl.message('Start now', name: 'button', desc: '', args: []);
+    return Intl.message(
+      'Start now',
+      name: 'button',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `signIn`
   String get login {
-    return Intl.message('signIn', name: 'login', desc: '', args: []);
+    return Intl.message(
+      'signIn',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `email`
   String get email {
-    return Intl.message('email', name: 'email', desc: '', args: []);
+    return Intl.message(
+      'email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `password`
   String get password {
-    return Intl.message('password', name: 'password', desc: '', args: []);
+    return Intl.message(
+      'password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `forgotPassword`
@@ -146,7 +172,12 @@ class S {
 
   /// `or`
   String get signInDivider {
-    return Intl.message('or', name: 'signInDivider', desc: '', args: []);
+    return Intl.message(
+      'or',
+      name: 'signInDivider',
+      desc: '',
+      args: [],
+    );
   }
 }
 
