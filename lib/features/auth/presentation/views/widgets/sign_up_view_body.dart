@@ -3,6 +3,7 @@ import 'package:e_commerce_app2/core/widgets/custome_button.dart';
 import 'package:e_commerce_app2/core/widgets/custome_text_form_field.dart';
 import 'package:e_commerce_app2/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:e_commerce_app2/features/auth/presentation/views/widgets/have_or_not_have_an_account_widget.dart';
+import 'package:e_commerce_app2/core/widgets/password_field.dart';
 import 'package:e_commerce_app2/features/auth/presentation/views/widgets/terms_conditions_check_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,14 +48,10 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 textInputType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 16),
-              CustomeTextFormField(
+              PasswordField(
                 onSaved: (value) {
                   password = value!;
                 },
-                hintText: 'Password',
-                textInputType: TextInputType.visiblePassword,
-                suffixIcon:
-                    Icon(Icons.remove_red_eye, color: Color(0xffC9CECF)),
               ),
               const SizedBox(height: 16),
               TermsConditionsCheckBox(),
