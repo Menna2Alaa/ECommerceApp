@@ -1,4 +1,5 @@
 import 'package:e_commerce_app2/constants.dart';
+import 'package:e_commerce_app2/core/helper_functions/builde_error_bar.dart';
 import 'package:e_commerce_app2/core/widgets/custome_button.dart';
 import 'package:e_commerce_app2/core/widgets/custome_text_form_field.dart';
 import 'package:e_commerce_app2/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
@@ -17,6 +18,7 @@ class SignUpViewBody extends StatefulWidget {
 
 class _SignUpViewBodyState extends State<SignUpViewBody> {
   late String email, userName, password;
+  bool isTermsAccepted = false;
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
@@ -54,16 +56,26 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 },
               ),
               const SizedBox(height: 16),
-              TermsConditionsCheckBox(),
+              TermsConditionsCheckBox(
+                onChanged: (value) {
+                  isTermsAccepted = value;
+                  setState(() {});
+                },
+              ),
               const SizedBox(height: 30),
               CustomeButton(
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      context
-                          .read<SignupCubit>()
-                          .createUserWithEmailAndPassword(
-                              email, password, userName);
+                      if (isTermsAccepted) {
+                        context
+                            .read<SignupCubit>()
+                            .createUserWithEmailAndPassword(
+                                email, password, userName);
+                      } else {
+                        buildErrorBar(
+                            context, 'Please accept terms and conditions');
+                      }
                     } else {
                       setState(() {
                         autovalidateMode = AutovalidateMode.always;

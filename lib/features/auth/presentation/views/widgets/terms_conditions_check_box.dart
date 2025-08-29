@@ -4,13 +4,16 @@ import 'package:e_commerce_app2/features/auth/presentation/views/widgets/custome
 import 'package:flutter/material.dart';
 
 class TermsConditionsCheckBox extends StatelessWidget {
-  const TermsConditionsCheckBox({super.key});
+  const TermsConditionsCheckBox({super.key, required this.onChanged});
+  final ValueChanged<bool> onChanged;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CustomeCheckBox(),
+        CustomeCheckBox(
+          onChanged: onChanged,
+        ),
         SizedBox(width: 16),
         //Checkbox(value: false, onChanged: (value) {}),
         Expanded(

@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomeCheckBox extends StatefulWidget {
-  const CustomeCheckBox({super.key});
+  const CustomeCheckBox({super.key, required this.onChanged});
+  final ValueChanged<bool> onChanged;
 
   @override
   State<CustomeCheckBox> createState() => _CustomeCheckBoxState();
@@ -20,6 +21,7 @@ class _CustomeCheckBoxState extends State<CustomeCheckBox> {
         setState(() {
           isChecked = !isChecked;
         });
+        widget.onChanged(isChecked);
       },
       child: AnimatedContainer(
         width: 24,
@@ -35,9 +37,8 @@ class _CustomeCheckBoxState extends State<CustomeCheckBox> {
             borderRadius: BorderRadius.circular(8),
           ),
         ),
-        child: isChecked
-            ? SvgPicture.asset(Assets.assetsImagesCheck)
-            : SizedBox(),
+        child:
+            isChecked ? SvgPicture.asset(Assets.assetsImagesCheck) : SizedBox(),
       ),
     );
   }
