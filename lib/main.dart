@@ -1,4 +1,5 @@
 import 'package:e_commerce_app2/core/helper_functions/on_generate_route.dart';
+import 'package:e_commerce_app2/core/services/custome_bloc_observer.dart';
 import 'package:e_commerce_app2/core/services/get_it_service.dart';
 import 'package:e_commerce_app2/core/services/shared_prefrences_singleton.dart';
 import 'package:e_commerce_app2/core/utilies/app_colors.dart';
@@ -7,10 +8,12 @@ import 'package:e_commerce_app2/firebase_options.dart';
 import 'package:e_commerce_app2/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = CustomeBlocObserver();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   await Pref.init();
