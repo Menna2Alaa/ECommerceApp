@@ -31,4 +31,19 @@ class AuthRepoImpl extends AuthRepo {
       return Left(ServerFailure('Something went wrong, try again later'));
     }
   }
+
+  @override
+  Future<Either<Failures, UserEntity>> signinWithEmailAndPassword(
+      String email, String password, String name) async {
+    try {
+      var user = await firebaseAuthService.signInWithEmailAndPassword(
+          email: email, password: password);
+      return Right(UserModel.fromFirebase(user));
+    } on CustomeException catch (e) {
+      return Left(ServerFailure(e.message));
+    } catch (e) {
+      log('Exception in AuthRepoImplementation.signinWithEmailAndPassword: ${e.toString()}');
+      return Left(ServerFailure('Something went wrong, try again later'));
+    }
+  }
 }
