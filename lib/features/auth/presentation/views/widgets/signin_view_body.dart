@@ -10,8 +10,8 @@ import 'package:e_commerce_app2/features/auth/presentation/views/widgets/or_divi
 import 'package:e_commerce_app2/features/auth/presentation/views/widgets/social_login_button.dart';
 import 'package:flutter/material.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class SigninViewBody extends StatelessWidget {
+  const SigninViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,7 @@ import 'package:e_commerce_app2/constants.dart';
 import 'package:e_commerce_app2/core/services/shared_prefrences_singleton.dart';
 import 'package:e_commerce_app2/core/utilies/app_colors.dart';
 import 'package:e_commerce_app2/core/widgets/custome_button.dart';
-import 'package:e_commerce_app2/features/auth/presentation/views/login_view.dart';
+import 'package:e_commerce_app2/features/auth/presentation/views/signin_view.dart';
 import 'package:e_commerce_app2/features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 import 'package:flutter/material.dart';
 
@@ -59,7 +59,8 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             child: CustomeButton(
               onPressed: () {
                 Pref.setBool(kIsOnBoardingViewSeen, true);
-                Navigator.of(context).pushReplacementNamed(LoginView.routeName);
+                Navigator.of(context)
+                    .pushReplacementNamed(SigninView.routeName);
               },
               text: 'Start Now',
             ),

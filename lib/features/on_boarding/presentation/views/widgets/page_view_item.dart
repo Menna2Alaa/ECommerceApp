@@ -1,6 +1,6 @@
 import 'package:e_commerce_app2/constants.dart';
 import 'package:e_commerce_app2/core/services/shared_prefrences_singleton.dart';
-import 'package:e_commerce_app2/features/auth/presentation/views/login_view.dart';
+import 'package:e_commerce_app2/features/auth/presentation/views/signin_view.dart';
 import 'package:e_commerce_app2/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -46,7 +46,7 @@ class PageViewItem extends StatelessWidget {
                       Pref.setBool(kIsOnBoardingViewSeen, true);
                       Navigator.of(
                         context,
-                      ).pushReplacementNamed(LoginView.routeName);
+                      ).pushReplacementNamed(SigninView.routeName);
                     },
                     child: Text(
                       S.of(context).skip,

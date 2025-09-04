@@ -1,7 +1,7 @@
 import 'package:e_commerce_app2/constants.dart';
 import 'package:e_commerce_app2/core/services/shared_prefrences_singleton.dart';
 import 'package:e_commerce_app2/core/utilies/app_images.dart';
-import 'package:e_commerce_app2/features/auth/presentation/views/login_view.dart';
+import 'package:e_commerce_app2/features/auth/presentation/views/signin_view.dart';
 import 'package:e_commerce_app2/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -28,9 +28,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
-          mainAxisAlignment: isEnglish()
-              ? MainAxisAlignment.start
-              : MainAxisAlignment.end,
+          mainAxisAlignment:
+              isEnglish() ? MainAxisAlignment.start : MainAxisAlignment.end,
           children: [SvgPicture.asset(Assets.assetsImagesPlant)],
         ),
         SvgPicture.asset(Assets.assetsImagesLogo),
@@ -44,7 +43,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     Future.delayed(const Duration(seconds: 3), () {
       if (isOnBoardingViewSeen) {
         if (mounted) {
-          Navigator.pushReplacementNamed(context, LoginView.routeName);
+          Navigator.pushReplacementNamed(context, SigninView.routeName);
         }
       } else {
         if (mounted) {
