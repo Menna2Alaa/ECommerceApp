@@ -4,36 +4,50 @@ import 'package:e_commerce_app2/core/utilies/app_images.dart';
 import 'package:e_commerce_app2/core/utilies/app_text_styles.dart';
 import 'package:e_commerce_app2/core/widgets/custome_button.dart';
 import 'package:e_commerce_app2/core/widgets/custome_text_form_field.dart';
+import 'package:e_commerce_app2/core/widgets/password_field.dart';
+import 'package:e_commerce_app2/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 import 'package:e_commerce_app2/features/auth/presentation/views/sign_up_view.dart';
 import 'package:e_commerce_app2/features/auth/presentation/views/widgets/have_or_not_have_an_account_widget.dart';
 import 'package:e_commerce_app2/features/auth/presentation/views/widgets/or_divider.dart';
 import 'package:e_commerce_app2/features/auth/presentation/views/widgets/social_login_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SigninViewBody extends StatelessWidget {
+class SigninViewBody extends StatefulWidget {
   const SigninViewBody({super.key});
 
   @override
+  State<SigninViewBody> createState() => _SigninViewBodyState();
+}
+
+class _SigninViewBodyState extends State<SigninViewBody> {
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  late String email, password;
+
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-        child: SingleChildScrollView(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+      child: SingleChildScrollView(
+        child: Form(
+          key: formKey,
+          autovalidateMode: autovalidateMode,
           child: Column(
             children: [
               const SizedBox(height: 24),
-              const CustomeTextFormField(
+              CustomeTextFormField(
+                onSaved: (value) {
+                  email = value!;
+                },
                 hintText: 'Email',
                 textInputType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 16),
-              const CustomeTextFormField(
-                hintText: 'PassWord',
-                textInputType: TextInputType.visiblePassword,
-                suffixIcon: Icon(
-                  Icons.remove_red_eye,
-                  color: Color(0xffC9CECF),
-                ),
+              PasswordField(
+                onSaved: (value) {
+                  password = value!;
+                },
               ),
               const SizedBox(height: 16),
               Row(
@@ -48,7 +62,19 @@ class SigninViewBody extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 33),
-              CustomeButton(onPressed: () {}, text: 'Sign In'),
+              CustomeButton(
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      formKey.currentState!.save();
+                      context
+                          .read<SigninCubit>()
+                          .signinWithEmailAndPassword(email, password);
+                    } else {
+                      autovalidateMode = AutovalidateMode.always;
+                      setState(() {});
+                    }
+                  },
+                  text: 'Sign In'),
               const SizedBox(height: 33),
               HaveOrNotHaveAnAccountWidget(
                 onTap: () {
