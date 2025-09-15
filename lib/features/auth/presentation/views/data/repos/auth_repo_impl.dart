@@ -29,7 +29,7 @@ class AuthRepoImpl extends AuthRepo {
         email: email,
         password: password,
       );
-      var userEntity = UserModel.fromFirebase(user);
+      var userEntity = UserEntity(name: name, email: email, uId: user.uid);
       await addUserData(user: userEntity);
       return Right(userEntity);
     } on CustomeException catch (e) {
