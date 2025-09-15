@@ -9,6 +9,7 @@ import 'package:e_commerce_app2/core/utilies/backend_endpoint.dart';
 import 'package:e_commerce_app2/features/auth/domain/entities/user_entity.dart';
 import 'package:e_commerce_app2/features/auth/domain/repos/auth_repo.dart';
 import 'package:e_commerce_app2/features/auth/presentation/views/data/models/user_model.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final FirebaseAuthService firebaseAuthService;
@@ -22,8 +23,9 @@ class AuthRepoImpl extends AuthRepo {
     String password,
     String name,
   ) async {
+    User? user;
     try {
-      var user = await firebaseAuthService.createUserWithEmailAndPassword(
+      user = await firebaseAuthService.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -31,8 +33,14 @@ class AuthRepoImpl extends AuthRepo {
       await addUserData(user: userEntity);
       return Right(userEntity);
     } on CustomeException catch (e) {
+      if (user != null) {
+        await firebaseAuthService.deleteUSer();
+      }
       return Left(ServerFailure(e.message));
     } catch (e) {
+      if (user != null) {
+        await firebaseAuthService.deleteUSer();
+      }
       log('Exception in AuthRepoImplementation.createUserWithEmailAndPassword: ${e.toString()}');
       return Left(ServerFailure('Something went wrong, try again later'));
     }
