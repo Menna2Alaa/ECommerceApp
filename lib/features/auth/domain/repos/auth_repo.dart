@@ -21,4 +21,6 @@ abstract class AuthRepo {
   Future<Either<Failures, UserEntity>> signinWitApple();
 
   Future addUserData({required UserEntity user});
+
+  Future<UserEntity> getUserData({required String uId});
 }
