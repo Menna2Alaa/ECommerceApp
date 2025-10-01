@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for assetsImagesAppIcon
   /// assets/images/app_icon.png
   static const String assetsImagesAppIcon = "assets/images/app_icon.png";
@@ -20,11 +20,13 @@ class Assets {
 
   /// Assets for assetsImagesFacebookIcon
   /// assets/images/facebook_icon.svg
-  static const String assetsImagesFacebookIcon = "assets/images/facebook_icon.svg";
+  static const String assetsImagesFacebookIcon =
+      "assets/images/facebook_icon.svg";
 
   /// Assets for assetsImagesFeaturedItemBackground
   /// assets/images/featured_item_background.svg
-  static const String assetsImagesFeaturedItemBackground = "assets/images/featured_item_background.svg";
+  static const String assetsImagesFeaturedItemBackground =
+      "assets/images/featured_item_background.svg";
 
   /// Assets for assetsImagesFilter
   /// assets/images/filter.svg
@@ -48,23 +50,28 @@ class Assets {
 
   /// Assets for assetsImagesNotification
   /// assets/images/notification.svg
-  static const String assetsImagesNotification = "assets/images/notification.svg";
+  static const String assetsImagesNotification =
+      "assets/images/notification.svg";
 
   /// Assets for assetsImagesPageViewItem1BackgroundImage
   /// assets/images/page_view_item1_background_image.svg
-  static const String assetsImagesPageViewItem1BackgroundImage = "assets/images/page_view_item1_background_image.svg";
+  static const String assetsImagesPageViewItem1BackgroundImage =
+      "assets/images/page_view_item1_background_image.svg";
 
   /// Assets for assetsImagesPageViewItem1Image
   /// assets/images/page_view_item1_image.svg
-  static const String assetsImagesPageViewItem1Image = "assets/images/page_view_item1_image.svg";
+  static const String assetsImagesPageViewItem1Image =
+      "assets/images/page_view_item1_image.svg";
 
   /// Assets for assetsImagesPageViewItem2BackgroundImage
   /// assets/images/page_view_item2_background_image.svg
-  static const String assetsImagesPageViewItem2BackgroundImage = "assets/images/page_view_item2_background_image.svg";
+  static const String assetsImagesPageViewItem2BackgroundImage =
+      "assets/images/page_view_item2_background_image.svg";
 
   /// Assets for assetsImagesPageViewItem2Image
   /// assets/images/page_view_item2_image.svg
-  static const String assetsImagesPageViewItem2Image = "assets/images/page_view_item2_image.svg";
+  static const String assetsImagesPageViewItem2Image =
+      "assets/images/page_view_item2_image.svg";
 
   /// Assets for assetsImagesPlant
   /// assets/images/plant.svg
@@ -72,7 +79,8 @@ class Assets {
 
   /// Assets for assetsImagesProfileImage
   /// assets/images/profile_image.png
-  static const String assetsImagesProfileImage = "assets/images/profile_image.png";
+  static const String assetsImagesProfileImage =
+      "assets/images/profile_image.png";
 
   /// Assets for assetsImagesSearchIcon
   /// assets/images/search_icon.svg
@@ -80,7 +88,8 @@ class Assets {
 
   /// Assets for assetsImagesSplashBottom
   /// assets/images/splash_bottom.svg
-  static const String assetsImagesSplashBottom = "assets/images/splash_bottom.svg";
+  static const String assetsImagesSplashBottom =
+      "assets/images/splash_bottom.svg";
 
   /// Assets for assetsImagesTrash
   /// assets/images/trash.svg
@@ -92,6 +101,6 @@ class Assets {
 
   /// Assets for assetsImagesWatermelonTest
   /// assets/images/watermelon_test.png
-  static const String assetsImagesWatermelonTest = "assets/images/watermelon_test.png";
+  static const String assetsImagesWatermelonTest =
+      "assets/images/watermelon_test.png";
 }
-

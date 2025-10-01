@@ -1,3 +1,4 @@
+import 'package:e_commerce_app2/features/home/presentation/views/widgets/cutome_home_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -5,6 +6,10 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(child: const CutomeHomeAppBar()),
+      ],
+    );
   }
 }
