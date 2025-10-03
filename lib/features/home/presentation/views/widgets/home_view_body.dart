@@ -1,5 +1,6 @@
 import 'package:e_commerce_app2/constants.dart';
 import 'package:e_commerce_app2/core/widgets/custome_search_text_field.dart';
+import 'package:e_commerce_app2/features/home/presentation/views/widgets/best_selling_header.dart';
 import 'package:e_commerce_app2/features/home/presentation/views/widgets/cutome_home_app_bar.dart';
 import 'package:e_commerce_app2/features/home/presentation/views/widgets/featured_list.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,10 @@ class HomeViewBody extends StatelessWidget {
                 height: 12,
               ),
               const FeaturedList(),
+              const SizedBox(
+                height: 12,
+              ),
+              const BestSellingHeader(),
             ],
           )),
         ],
