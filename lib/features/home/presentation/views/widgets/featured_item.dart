@@ -11,71 +11,74 @@ class FeaturedItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var itemWidth = MediaQuery.sizeOf(context).width;
+    var itemWidth = MediaQuery.sizeOf(context).width - 32;
 
-    return SizedBox(
-      width: itemWidth,
-      child: AspectRatio(
-        aspectRatio: 342 / 158,
-        child: Stack(
-          children: [
-            Positioned(
-                right: 0,
-                bottom: 0,
-                top: 0,
-                left: itemWidth * 0.4,
-                child: SvgPicture.asset(Assets.assetsImagesPageViewItem2Image,
-                    fit: BoxFit.fill)),
-            SizedBox(
-              width: itemWidth * 0.5,
-              child: Stack(
-                children: [
-                  Positioned.fill(
-                    child: Transform(
-                      alignment: Alignment.center,
-                      transform: Matrix4.rotationY(math.pi),
-                      child: Image(
-                        image:
-                            svg.Svg(Assets.assetsImagesFeaturedItemBackground),
-                        fit: BoxFit.fill,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(4),
+      child: SizedBox(
+        width: itemWidth,
+        child: AspectRatio(
+          aspectRatio: 342 / 158,
+          child: Stack(
+            children: [
+              Positioned(
+                  right: 0,
+                  bottom: 0,
+                  top: 0,
+                  left: itemWidth * 0.4,
+                  child: SvgPicture.asset(Assets.assetsImagesPageViewItem2Image,
+                      fit: BoxFit.fill)),
+              SizedBox(
+                width: itemWidth * 0.5,
+                child: Stack(
+                  children: [
+                    Positioned.fill(
+                      child: Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.rotationY(math.pi),
+                        child: Image(
+                          image: svg.Svg(
+                              Assets.assetsImagesFeaturedItemBackground),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 33),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 25,
-                        ),
-                        Text(
-                          "Eid offers",
-                          style: AppTextStyles.regular13
-                              .copyWith(color: Colors.white),
-                        ),
-                        Spacer(),
-                        Text(
-                          "25% offer",
-                          style: AppTextStyles.bold19
-                              .copyWith(color: Colors.white),
-                        ),
-                        SizedBox(
-                          height: 11,
-                        ),
-                        FeaturedItemButton(
-                          onPressed: () {},
-                        ),
-                        SizedBox(
-                          height: 29,
-                        )
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(left: 33),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 25,
+                          ),
+                          Text(
+                            "Eid offers",
+                            style: AppTextStyles.regular13
+                                .copyWith(color: Colors.white),
+                          ),
+                          Spacer(),
+                          Text(
+                            "25% offer",
+                            style: AppTextStyles.bold19
+                                .copyWith(color: Colors.white),
+                          ),
+                          SizedBox(
+                            height: 11,
+                          ),
+                          FeaturedItemButton(
+                            onPressed: () {},
+                          ),
+                          SizedBox(
+                            height: 29,
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
