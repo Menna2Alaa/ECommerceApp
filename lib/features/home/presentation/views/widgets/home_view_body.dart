@@ -1,5 +1,6 @@
 import 'package:e_commerce_app2/constants.dart';
 import 'package:e_commerce_app2/core/widgets/custome_search_text_field.dart';
+import 'package:e_commerce_app2/core/widgets/fruit_item.dart';
 import 'package:e_commerce_app2/features/home/presentation/views/widgets/best_selling_header.dart';
 import 'package:e_commerce_app2/features/home/presentation/views/widgets/cutome_home_app_bar.dart';
 import 'package:e_commerce_app2/features/home/presentation/views/widgets/featured_list.dart';
@@ -13,26 +14,27 @@ class HomeViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: CustomScrollView(
-        slivers: [
+        slivers: const [
           SliverToBoxAdapter(
               child: Column(
             children: [
-              const SizedBox(
+              SizedBox(
                 height: kTopPadding,
               ),
-              const CutomeHomeAppBar(),
-              const SizedBox(
+              CutomeHomeAppBar(),
+              SizedBox(
                 height: kTopPadding,
               ),
-              const CustomeSearchTextField(),
+              CustomeSearchTextField(),
               SizedBox(
                 height: 12,
               ),
-              const FeaturedList(),
-              const SizedBox(
+              FeaturedList(),
+              SizedBox(
                 height: 12,
               ),
-              const BestSellingHeader(),
+              BestSellingHeader(),
+              FruitItem()
             ],
           )),
         ],
