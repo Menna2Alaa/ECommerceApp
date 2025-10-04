@@ -2,7 +2,6 @@ import 'package:e_commerce_app2/core/utilies/app_colors.dart';
 import 'package:e_commerce_app2/core/utilies/app_images.dart';
 import 'package:e_commerce_app2/core/utilies/app_text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class FruitItem extends StatelessWidget {
   const FruitItem({super.key});
@@ -10,8 +9,6 @@ class FruitItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 220,
-      height: 250,
       decoration: ShapeDecoration(
           color: const Color(0xfff3f5f7),
           shape: RoundedRectangleBorder(
@@ -39,7 +36,7 @@ class FruitItem extends StatelessWidget {
               ListTile(
                 title: Text(
                   "watermelon",
-                  style: AppTextStyles.semiBold16,
+                  style: AppTextStyles.semiBold13, //semiBold16
                   textAlign: TextAlign.left,
                 ),
                 subtitle: Text.rich(
