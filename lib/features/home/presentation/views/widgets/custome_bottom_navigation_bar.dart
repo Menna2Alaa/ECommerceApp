@@ -1,3 +1,5 @@
+import 'package:e_commerce_app2/core/utilies/app_images.dart';
+import 'package:e_commerce_app2/features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class CustomeBottomNavigationBar extends StatelessWidget {
@@ -20,6 +22,7 @@ class CustomeBottomNavigationBar extends StatelessWidget {
                 offset: Offset(0, -2),
                 spreadRadius: 0)
           ]),
+      child: InActiveItem(svgPic: Assets.assetsImagesOutlinedHome),
     );
   }
 }
