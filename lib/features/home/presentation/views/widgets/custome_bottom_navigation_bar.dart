@@ -22,7 +22,31 @@ class CustomeBottomNavigationBar extends StatelessWidget {
                 offset: Offset(0, -2),
                 spreadRadius: 0)
           ]),
-      child: InActiveItem(svgPic: Assets.assetsImagesOutlinedHome),
+      child: Row(
+        children: const [],
+      ),
     );
+  }
+}
+
+class NavigationBarItem extends StatelessWidget {
+  const NavigationBarItem({super.key, required this.isActive});
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return isActive
+        ? const ActiveItem()
+        : InActiveItem(svgPic: Assets.assetsImagesOutlinedHome);
+  }
+}
+
+class ActiveItem extends StatelessWidget {
+  const ActiveItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
   }
 }
