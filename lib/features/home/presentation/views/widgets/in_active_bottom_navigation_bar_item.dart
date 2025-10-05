@@ -6,6 +6,6 @@ class InActiveBottomNavigationBarItem extends StatelessWidget {
   final String svgPic;
   @override
   Widget build(BuildContext context) {
-    return Expanded(child: SvgPicture.asset(svgPic));
+    return Expanded(flex: 2, child: SvgPicture.asset(svgPic));
   }
 }
