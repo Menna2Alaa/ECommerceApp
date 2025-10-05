@@ -1,5 +1,5 @@
-import 'package:e_commerce_app2/core/utilies/app_images.dart';
-import 'package:e_commerce_app2/features/home/presentation/views/widgets/home_view_body.dart';
+import 'package:e_commerce_app2/features/home/domain/entities/bottom_navigation_bar_entity.dart';
+import 'package:e_commerce_app2/features/home/presentation/views/widgets/navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomeBottomNavigationBar extends StatelessWidget {
@@ -23,30 +23,13 @@ class CustomeBottomNavigationBar extends StatelessWidget {
                 spreadRadius: 0)
           ]),
       child: Row(
-        children: const [],
+        children: bottomNavigationBarItems.map((e) {
+          return NavigationBarItem(
+            isActive: false,
+            bottomNavigationBarEntity: e,
+          );
+        }).toList(),
       ),
     );
-  }
-}
-
-class NavigationBarItem extends StatelessWidget {
-  const NavigationBarItem({super.key, required this.isActive});
-  final bool isActive;
-
-  @override
-  Widget build(BuildContext context) {
-    return isActive
-        ? const ActiveItem()
-        : InActiveItem(svgPic: Assets.assetsImagesOutlinedHome);
-  }
-}
-
-class ActiveItem extends StatelessWidget {
-  const ActiveItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
   }
 }

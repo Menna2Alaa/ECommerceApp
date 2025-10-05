@@ -5,7 +5,6 @@ import 'package:e_commerce_app2/features/home/presentation/views/widgets/best_se
 import 'package:e_commerce_app2/features/home/presentation/views/widgets/cutome_home_app_bar.dart';
 import 'package:e_commerce_app2/features/home/presentation/views/widgets/featured_list.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -44,14 +43,5 @@ class HomeViewBody extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class InActiveItem extends StatelessWidget {
-  const InActiveItem({super.key, required this.svgPic});
-  final String svgPic;
-  @override
-  Widget build(BuildContext context) {
-    return SvgPicture.asset(svgPic);
   }
 }

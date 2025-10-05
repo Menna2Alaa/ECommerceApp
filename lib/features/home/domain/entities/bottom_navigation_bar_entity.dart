@@ -8,17 +8,17 @@ class BottomNavigationBarEntity {
       {required this.activeImage, required this.inActiveImage});
 }
 
-List<BottomNavigationBarEntity> getBottomNavigationBarItems = [
-  BottomNavigationBarEntity('Home',
-      activeImage: Assets.assetsImagesBoldHome,
-      inActiveImage: Assets.assetsImagesOutlinedHome),
-  BottomNavigationBarEntity('Products',
-      activeImage: Assets.assetsImagesBoldProduct,
-      inActiveImage: Assets.assetsImagesOutlinedProduct),
-  BottomNavigationBarEntity('Shopping cart',
-      activeImage: Assets.assetsImagesBoldShoppingCart,
-      inActiveImage: Assets.assetsImagesOutlinedShoppingCart),
-  BottomNavigationBarEntity('Account',
-      activeImage: Assets.assetsImagesBoldUser,
-      inActiveImage: Assets.assetsImagesOutlinedUser),
-];
+List<BottomNavigationBarEntity> get bottomNavigationBarItems => [
+      BottomNavigationBarEntity('Home',
+          activeImage: Assets.assetsImagesBoldHome,
+          inActiveImage: Assets.assetsImagesOutlinedHome),
+      BottomNavigationBarEntity('Products',
+          activeImage: Assets.assetsImagesBoldProduct,
+          inActiveImage: Assets.assetsImagesOutlinedProduct),
+      BottomNavigationBarEntity('Shopping cart',
+          activeImage: Assets.assetsImagesBoldShoppingCart,
+          inActiveImage: Assets.assetsImagesOutlinedShoppingCart),
+      BottomNavigationBarEntity('Account',
+          activeImage: Assets.assetsImagesBoldUser,
+          inActiveImage: Assets.assetsImagesOutlinedUser),
+    ];
