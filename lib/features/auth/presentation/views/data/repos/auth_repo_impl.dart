@@ -57,6 +57,7 @@ class AuthRepoImpl extends AuthRepo {
       var user = await firebaseAuthService.signInWithEmailAndPassword(
           email: email, password: password);
       var userEntity = await getUserData(uId: user.uid);
+      //save user data if we use API to know if he logged in before or not after that in splash view before navigation check about it(fetch user data and see if it null or not)
       return Right(userEntity);
     } on CustomeException catch (e) {
       return Left(ServerFailure(e.message));
