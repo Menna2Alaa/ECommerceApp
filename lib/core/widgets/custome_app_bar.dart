@@ -1,9 +1,11 @@
 import 'package:e_commerce_app2/core/utilies/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-AppBar buildAppBar(context, {required String title}) {
+AppBar buildCustomeAppBar(context,
+    {required String title, Widget? iconWidget}) {
   return AppBar(
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.transparent,
+    elevation: 0,
     leading: GestureDetector(
       onTap: () {
         Navigator.pop(context);
@@ -12,5 +14,12 @@ AppBar buildAppBar(context, {required String title}) {
     ),
     centerTitle: true,
     title: Text(title, style: AppTextStyles.bold19),
+    actions: [
+      if (iconWidget != null)
+        Padding(
+          padding: const EdgeInsets.only(right: 16),
+          child: iconWidget,
+        ),
+    ],
   );
 }

@@ -1,7 +1,7 @@
 import 'package:e_commerce_app2/core/utilies/app_images.dart';
 import 'package:e_commerce_app2/core/utilies/app_text_styles.dart';
+import 'package:e_commerce_app2/core/widgets/notification_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class CutomeHomeAppBar extends StatelessWidget {
   const CutomeHomeAppBar({super.key});
@@ -9,11 +9,7 @@ class CutomeHomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      trailing: Container(
-          padding: EdgeInsets.all(12),
-          decoration: const ShapeDecoration(
-              color: Color(0xffEEF8ED), shape: OvalBorder()),
-          child: SvgPicture.asset(Assets.assetsImagesNotification)),
+      trailing: NotificationWidget(),
       leading: Image.asset(Assets.assetsImagesProfileImage),
       title: Text(
         'Good Morning..!',
