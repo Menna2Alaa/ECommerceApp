@@ -34,8 +34,23 @@ class _CustomeBottomNavigationBarState
           children: bottomNavigationBarItems.asMap().entries.map((e) {
         var index = e.key;
         var entity = e.value;
-        return NavigationBarItem(
-            isActive: activeIndex == index, bottomNavigationBarEntity: entity);
+        return Expanded(
+          flex: index == activeIndex ? 3 : 2,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 100),
+            curve: Curves.easeInOut,
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  activeIndex = index;
+                });
+              },
+              child: NavigationBarItem(
+                  isActive: activeIndex == index,
+                  bottomNavigationBarEntity: entity),
+            ),
+          ),
+        );
       }).toList()),
     );
   }

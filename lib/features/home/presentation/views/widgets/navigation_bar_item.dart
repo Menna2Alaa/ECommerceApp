@@ -13,13 +13,29 @@ class NavigationBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return isActive
-        ? ActiveNavigationBarItem(
-            svgPic: bottomNavigationBarEntity.activeImage,
-            name: bottomNavigationBarEntity.name,
-          )
-        : InActiveBottomNavigationBarItem(
-            svgPic: bottomNavigationBarEntity.inActiveImage,
-          );
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 100),
+      switchInCurve: Curves.easeInOut,
+      switchOutCurve: Curves.easeInOut,
+      transitionBuilder: (child, animation) {
+        return SlideTransition(
+          position: Tween<Offset>(
+            begin: const Offset(0, 0.3),
+            end: Offset.zero,
+          ).animate(animation),
+          child: FadeTransition(opacity: animation, child: child),
+        );
+      },
+      child: isActive
+          ? ActiveNavigationBarItem(
+              // key: const ValueKey('active'),
+              svgPic: bottomNavigationBarEntity.activeImage,
+              name: bottomNavigationBarEntity.name,
+            )
+          : InActiveBottomNavigationBarItem(
+              // key: const ValueKey('inactive'),
+              svgPic: bottomNavigationBarEntity.inActiveImage,
+            ),
+    );
   }
 }
