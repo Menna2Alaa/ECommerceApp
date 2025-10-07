@@ -1,3 +1,4 @@
+import 'package:e_commerce_app2/core/helper_functions/get_user.dart';
 import 'package:e_commerce_app2/core/utilies/app_images.dart';
 import 'package:e_commerce_app2/core/utilies/app_text_styles.dart';
 import 'package:e_commerce_app2/core/widgets/notification_widget.dart';
@@ -17,7 +18,7 @@ class CutomeHomeAppBar extends StatelessWidget {
         style: AppTextStyles.regular16.copyWith(color: Color(0xff949D9E)),
       ),
       subtitle: Text(
-        'Ahmed Mostafa',
+        getUser().name,
         textAlign: TextAlign.left,
         style: AppTextStyles.bold16.copyWith(color: Colors.black),
       ),
