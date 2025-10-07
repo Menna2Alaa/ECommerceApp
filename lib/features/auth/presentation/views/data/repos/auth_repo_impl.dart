@@ -1,10 +1,13 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
+import 'package:e_commerce_app2/constants.dart';
 import 'package:e_commerce_app2/core/errors/exceptions.dart';
 import 'package:e_commerce_app2/core/errors/failures.dart';
 import 'package:e_commerce_app2/core/services/database_service.dart';
 import 'package:e_commerce_app2/core/services/firebase_auth_service.dart';
+import 'package:e_commerce_app2/core/services/shared_prefrences_singleton.dart';
 import 'package:e_commerce_app2/core/utilies/backend_endpoint.dart';
 import 'package:e_commerce_app2/features/auth/domain/entities/user_entity.dart';
 import 'package:e_commerce_app2/features/auth/domain/repos/auth_repo.dart';
@@ -122,7 +125,7 @@ class AuthRepoImpl extends AuthRepo {
   Future addUserData({required UserEntity user}) async {
     await dataBaseService.addData(
         path: BackendEndpoint.addUserData,
-        data: user.toMap(),
+        data: UserModel.fromEntity(user).toMap(),
         documentId: user.uId);
   }
 
@@ -131,5 +134,11 @@ class AuthRepoImpl extends AuthRepo {
     var userData = await dataBaseService.getData(
         path: BackendEndpoint.getUserData, documentId: uId);
     return UserModel.fromJson(userData);
+  }
+
+  @override
+  Future saveUserData({required UserEntity user}) async {
+    var jasonData = jsonEncode(UserModel.fromEntity(user).toMap());
+    await Pref.setString(kUserData, jasonData);
   }
 }
